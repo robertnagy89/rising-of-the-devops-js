@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Home.css';
-import mermaid from "mermaid";
 import data from '../images/diagramData.png';
 
 
@@ -69,46 +68,19 @@ title potato
 "fat_total_g": 0.1`;
         return (
             <div className="modelContainer">
-                <script type="module">
-                    import mermaid from 'https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs';
-                    mermaid.initialize("startOnLoad: true");
-                </script>
                 <h1>Welcome Back to Bigidy Biceps</h1><br></br>
                 <p>Many Thanks to <a href="https://calorieninjas.com/api">CalorieNinja</a> for dilligently collecting all that sweet nutritional data.</p>
                 <br></br>
                 
                 <div class="foodContainer">
-                    <Mermaid className="foodCard" chart={diagramOne} />
-                    
-                <Mermaid className="foodCard" chart={diagramTwo} />
-                <Mermaid className="foodCard" chart={diagramThree} />
                 </div>
                 <div className="diagramData">
                 <img src={data} alt="diagram details"/>
                 </div>
                 <br></br>
                 <h2 class="shoutOut">Activity Tracking In Gantt!</h2>
-                <Mermaid chart={chart} />
-
             </div>
         )
-    }
-}
-
-
-
-
-mermaid.initialize({
-    startOnLoad: true
-});
-
-class Mermaid extends React.Component {
-    componentDidMount() {
-        mermaid.contentLoaded();
-    }
-
-    render() {
-        return <div className="mermaid">{this.props.chart}</div>;
     }
 }
 
